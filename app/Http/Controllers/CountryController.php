@@ -88,6 +88,8 @@ class CountryController extends Controller
         if ($request->get('name')) {
             $country->name = $request->get('name');
         }
+        $country->user_id = Auth::id();
+
         $country->save();
 
         return \redirect('/');
